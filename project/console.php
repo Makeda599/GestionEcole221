@@ -24,6 +24,15 @@ do{
                             print "Cet etudiant n'exista pas \n";
                         }
                         break;
+                    case 3 :
+                        $etuId = readline("Donnez l'id de l'etudiant \n");
+                        $verif = verifId($etuId);
+                        if($verif == 1){
+                           supprimerEtudiant($etuId);
+                        }else {
+                            print "Cet etudiant n'exista pas \n";
+                        }                        
+                        break;
                     default:
                         print "choix invalide \n";
                 }

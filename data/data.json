@@ -1,0 +1,91 @@
+{
+    "niveaux": [
+        { "id": 1, "nom": "Licence 1" },
+        { "id": 2, "nom": "Licence 2" },
+        { "id": 3, "nom": "Licence 3" },
+        { "id": 4, "nom": "Master 1" },
+        { "id": 5, "nom": "Master 2" }
+    ],
+    "etudiants": [
+        {
+            "id_etudiant": 1,
+            "nom": "Diallo",
+            "prenom": "Mamadou",
+            "email": "mamadoudiallo@gmail.com"
+        },
+        {
+            "id_etudiant": 2,
+            "nom": "Ndiaye",
+            "prenom": "Fatou",
+            "email": "fatoundiaye@gmail.com"
+        },
+        {
+            "id_etudiant": 3,
+            "nom": "Sow",
+            "prenom": "Ibrahim",
+            "email": "ibrahimsow@gmail.com"
+        },
+        {
+            "id_etudiant": 4,
+            "nom": "Ba",
+            "prenom": "Aminata",
+            "email": "aminataba@gmail.com"
+        },
+        {
+            "id_etudiant": 5,
+            "nom": "Fall",
+            "prenom": "Ousmane",
+            "email": "ousmanefall@gmail.com"
+        },
+        {
+            "id_etudiant": 6,
+            "nom": "Gueye",
+            "prenom": "Aissatou",
+            "email": "aissatougueye@gmail.com"
+        }
+  
+    ],
+    "formations": [
+        {
+            "id_formation": 1,
+            "titre": "Développement Web",
+            "description": "HTML, CSS, JavaScript, PHP, MySQL",
+            "duree": "6 mois",
+            "nombres_de_places": 30,
+            "id_niveau": 2
+        },
+        {
+            "id_formation": 2,
+            "titre": "Cybersécurité",
+            "description": "Sécurité réseau, pare-feu, cryptographie",
+            "duree": "4 mois",
+            "nombres_de_places": 20,
+            "id_niveau": 3
+        },
+        {
+            "id_formation": 3,
+            "titre": "Intelligence Artificielle",
+            "description": "Machine Learning, Deep Learning, Python",
+            "duree": "8 mois",
+            "nombres_de_places": 25,
+            "id_niveau": 4
+        },
+        {
+            "id_formation": 4,
+            "titre": "Développement Mobile",
+            "description": "Android, iOS, Flutter, React Native",
+            "duree": "5 mois",
+            "nombres_de_places": 20,
+            "id_niveau": 2
+        },
+        {
+            "id_formation": 5,
+            "titre": "Base de Données",
+            "description": "MySQL, PostgreSQL, MongoDB, modélisation",
+            "duree": "3 mois",
+            "nombres_de_places": 35,
+            "id_niveau": 1
+        }
+
+    ]
+}

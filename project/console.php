@@ -33,6 +33,8 @@ do{
                             print "Cet etudiant n'exista pas \n";
                         }                        
                         break;
+                    case 4 :
+                        listeEtudiants();
                     default:
                         print "choix invalide \n";
                 }

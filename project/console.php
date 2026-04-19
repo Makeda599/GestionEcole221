@@ -15,6 +15,15 @@ do{
                         $etudiant = SaisirEtudiant();
                         ajoutEtudiant($etudiant);
                         break;
+                    case 2 :
+                        $etuId = readline("Donnez l'id de l'etudiant \n");
+                        $verif = verifId($etuId);
+                        if($verif == 1){
+                            modifierEtudiant($etuId);
+                        }else {
+                            print "Cet etudiant n'exista pas \n";
+                        }
+                        break;
                     default:
                         print "choix invalide \n";
                 }

@@ -42,7 +42,17 @@ do{
         case 2 :
             print("Gestion de formations \n");
                 menuFormation();
-                
+            $choixFormation = readline("Donnez votre choix: ");
+            switch($choixFormation){
+                case 1 :
+                    $formation = saisirFormation();
+                    if($formation  != null){
+                        ajoutFormation($formation);
+                    }
+                    break;
+               default:
+                    print "choix invalide \n"; 
+            }
             break;
 
 

@@ -59,6 +59,15 @@ do{
                         print "cette formation n'existe pas \n";
                     }
                     break;
+                    case 3 : 
+                        $idForm = readline("Donnez l'id de la formation \n");
+                        $veriform = verifFormation($idForm);
+                        if($veriform == 1 ){
+                            supprimerFormation($idForm);
+                        }else {
+                            print "cette formation n'existe pas \n";
+                        }
+                    break;
                default:
                     print "choix invalide \n"; 
             }

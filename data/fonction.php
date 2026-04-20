@@ -204,27 +204,44 @@ function saisirNiveau(){
     return $idNiveau;
 }
 
+function verifDataFormation($titre,$places,$idNiveau){
+    $errors = [];
+    if (empty($titre)) {
+        $errors["titre"] = "Le titre est obligatoire";
+    } elseif (strlen($titre) < 2 || strlen($titre) > 100) {
+        $errors["titre"] = "Le titre doit contenir entre 2 et 100 caractères";
+    }
+
+    if ($places <= 0) {
+        $errors["places"] = "Le nombre de places doit être supérieur à 0";
+    }
+
+    if (!verifNiveau($idNiveau)) {
+        $errors["niveau"] = "Ce niveau n'existe pas";
+    }
+
+    return $errors;
+}
+
 function saisirFormation(){
     $datas =  lireJsonEnPhp();
     $tabForm = $datas["formations"];
+    do{
     $titre = readline("Donner le titre de la formation \n");
-    if(empty($titre)){
-        print ("le titre est obligatoire \n");
-        return ;
-    }
-    do{
-        $places = (int)readline("Donner le nombre de places \n");
-        if($places <= 0){
-            print "Le nombre de places doit être supérieur à 0 réassayez\n";
+
+    $places = (int)readline("Donner le nombre de places \n");
+        $idNiveau = (int)readline("Donner le niveau \n");
+
+        $errors = verifDataFormation($titre, $places, $idNiveau);
+
+        if (!empty($errors)) {
+            print "\n ERREURS DÉTECTÉES \n";
+            foreach ($errors as $error) {
+                print "$error\n";
+            }
+            print "\n";
         }
-    }while($places <= 0);
-    do{
-        $idNiveau = saisirNiveau();
-        $verif = verifNiveau($idNiveau);
-        if($verif == 0){
-            print "Ce niveau n'existe pas réassayez \n";
-        }
-    }while($verif == 0);
+    } while (!empty($errors));
     $form = [
             "id_formation" => count($tabForm) + 1,
             "titre" => $titre,
@@ -251,44 +268,38 @@ function verifFormation($id){
     }
     return 0;
 }
-
 function modifierFormation($id){
-    $datas =  lireJsonEnPhp();
+    $datas = lireJsonEnPhp();
     foreach($datas["formations"] as $key => &$formation){
         if($formation["id_formation"] == $id){
-            $titre = readline("Donner le titre de la formation \n");
-            if(empty($titre)){
-                print ("le titre est obligatoire \n");
-                return ;
-            }
-            do{
+            do {
+                $titre = readline("Donner le titre de la formation \n");
                 $places = (int)readline("Donner le nombre de places \n");
-                if($places <= 0){
-                    print "Le nombre de places doit être supérieur à 0 réassayez\n";
-                }
-            }while($places <= 0);
-            do{
-                $idNiveau = saisirNiveau();
-                $verif = verifNiveau($idNiveau);
-                if($verif == 0){
-                    print "Ce niveau n'existe pas réassayez \n";
-                }
-            }while($verif == 0);
-            $formation = [
-                    $formation["id_formation" ] = $id,
-                    $formation["titre"] => $titre,
-                    $formation["description"] => readline("Donner la description de la formation \n"),
-                    $formation["duree"] => readline("Donner la duree de la formation \n"),
-                    $formation["nombres_de_places"] => $places,
-                    $formation["id_niveau"] => $idNiveau,
+                $idNiveau = (int)readline("Donner le niveau \n");
 
-            ];
+                $errors = verifDataFormation($titre, $places, $idNiveau);
 
-                phpEnJson($datas);
-                print("formation modifié avec succés \n");
-                return ;
+                if (!empty($errors)) {
+                    print "\n ERREURS DÉTECTÉES \n";
+                    foreach ($errors as $error) {
+                        print "$error\n";
+                    }
+                    print "\n";
                 }
-            }
+            } while (!empty($errors));
+
+            $formation["titre"] = $titre;
+            $formation["description"] = readline("Donner la description \n");
+            $formation["duree"] = readline("Donner la duree \n");
+            $formation["nombres_de_places"] = $places;
+            $formation["id_niveau"] = $idNiveau;
+
+            phpEnJson($datas);
+            print "Formation modifiée avec succès \n";
+            return;
+        }
+    }
+    print "Cette formation n'existe pas \n";
 }
 
 function supprimerFormation($id){

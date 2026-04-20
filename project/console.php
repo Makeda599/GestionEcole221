@@ -68,6 +68,9 @@ do{
                             print "cette formation n'existe pas \n";
                         }
                     break;
+                    case 4 :
+                        afficheAllFormation();
+                        break;
                default:
                     print "choix invalide \n"; 
             }

@@ -1,10 +1,25 @@
 {
     "niveaux": [
-        { "id": 1, "nom": "Licence 1" },
-        { "id": 2, "nom": "Licence 2" },
-        { "id": 3, "nom": "Licence 3" },
-        { "id": 4, "nom": "Master 1" },
-        { "id": 5, "nom": "Master 2" }
+        {
+            "id": 1,
+            "nom": "Licence 1"
+        },
+        {
+            "id": 2,
+            "nom": "Licence 2"
+        },
+        {
+            "id": 3,
+            "nom": "Licence 3"
+        },
+        {
+            "id": 4,
+            "nom": "Master 1"
+        },
+        {
+            "id": 5,
+            "nom": "Master 2"
+        }
     ],
     "etudiants": [
         {
@@ -42,8 +57,31 @@
             "nom": "Gueye",
             "prenom": "Aissatou",
             "email": "aissatougueye@gmail.com"
+        },
+        {
+            "id_etudiant": 7,
+            "nom": "diouf",
+            "prenom": "puly",
+            "email": "am@gmail.com"
+        },
+        {
+            "id_etudiant": 8,
+            "nom": "diouf",
+            "prenom": "fallou",
+            "email": "fal@gmail.com"
+        },
+        {
+            "id_etudiant": 9,
+            "nom": "diouf ",
+            "prenom": "ami",
+            "email": "amiua@gmail.com"
+        },
+        {
+            "id_etudiant": 10,
+            "nom": "ami",
+            "prenom": "diouf",
+            "email": "fsdfgghhjjk@gmail.com"
         }
-  
     ],
     "formations": [
         {
@@ -85,7 +123,22 @@
             "duree": "3 mois",
             "nombres_de_places": 35,
             "id_niveau": 1
+        },
+        {
+            "id_formation": 6,
+            "titre": "sport",
+            "description": "sdfghjkoiuiytrterze",
+            "duree": "7 ans",
+            "nombres_de_places": "30",
+            "id_niveau": "3"
+        },
+        {
+            "id_formation": 7,
+            "titre": "azertytuy",
+            "description": "dssdfghjjkoiuytrezerty",
+            "duree": "2 ans",
+            "nombres_de_places": 12,
+            "id_niveau": 1
         }
-
     ]
 }

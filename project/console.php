@@ -35,6 +35,7 @@ do{
                         break;
                     case 4 :
                         listeEtudiants();
+                        break;
                     default:
                         print "choix invalide \n";
                 }
